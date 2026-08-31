@@ -1,0 +1,31 @@
+{
+  "name": "doctorto",
+  "version": "1.0.0",
+  "description": "Monorepo for Doctorto - Main App & Admin Dashboard",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:main": "npm run dev -w main-app",
+    "dev:admin": "npm run dev -w admin-dashboard",
+    "dev": "npm run dev:main & npm run dev:admin",
+    "build:main": "npm run build -w main-app",
+    "build:admin": "npm run build -w admin-dashboard",
+    "build": "npm run build --workspaces",
+    "start:main": "npm run start -w main-app",
+    "start:admin": "npm run start -w admin-dashboard",
+    "start": "npm run start --workspaces"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soheil-a371/doctorto.git"
+  },
+  "keywords": [],
+  "author": "Soheil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soheil-a371/doctorto/issues"
+  },
+  "homepage": "https://github.com/Soheil-a371/doctorto#readme"
+}
