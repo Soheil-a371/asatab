@@ -1,7 +1,7 @@
 {
   "name": "Doctorto",
   "version": "1.0.0",
-  "description": "Monorepo for Doctorto - Main App & Admin Dashboard",
+  "description": "Monorepo for my-doctor - Main App & Admin Dashboard",
   "private": true,
   "workspaces": [
     "packages/*"
