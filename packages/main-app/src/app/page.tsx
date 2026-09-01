@@ -9,6 +9,7 @@ export default function Home(): ReactElement {
     <div className={styles.home}>
       <h1>
         <MyDoctorLogo />
+        دکتر من 
       </h1>
       <GlobalSearchBoxComponent />
       <div className={styles.history}>
