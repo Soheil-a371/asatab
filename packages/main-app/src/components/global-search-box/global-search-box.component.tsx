@@ -15,6 +15,7 @@ export default function GlobalSearchBoxComponent(): ReactElement {
       <input
         type="text"
         placeholder="نام بیماری، تخصص، پزشک، بیمارستان و ..."
+        aria-label="جستجوی پزشک یا مرکز درمانی"
       />
 
       <div className={styles.divider}></div>

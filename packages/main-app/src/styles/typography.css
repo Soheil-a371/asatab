@@ -9,7 +9,3 @@
   --fz-800: clamp(2.5rem, 1.8571rem + 2.8571vw, 4rem);
   --fz-900: clamp(3rem, 1.7143rem + 5.7143vw, 6rem);
 }
-
-body {
-  background-color: var(--test-color); /* باید قرمز بشه */
-}
