@@ -17,7 +17,7 @@ export default function Error({ error, reset }: ErrorProps): ReactElement {
   return (
     <div className={styles["error"]}>
       <div className={styles.writing}>
-        <div className={styles["status-code"]}>!بدبخت شدیم</div>
+        <div className={styles["status-code"]}>! شدیم</div>
         <h1>یک خطای غیر منتظره رخ داده است.</h1>
         <p>با عرض پوزش،لطفا با تیم پشتیبانی تماس بگیرید</p>
       </div>

@@ -1,7 +1,7 @@
 {
-  "name": "Doctorto",
+  "name": "asatab",
   "version": "1.0.0",
-  "description": "Monorepo for my-doctor - Main App & Admin Dashboard",
+  "description": "Monorepo for asatab - Main App & Admin Dashboard",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -19,15 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Soheil-a371/doctorto.git"
+    "url": "git+https://github.com/Soheil-a371/asatab.git"
   },
   "keywords": [],
   "author": "Soheil",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Soheil-a371/doctorto/issues"
+    "url": "https://github.com/Soheil-a371/asatab/issues"
   },
-  "homepage": "https://github.com/Soheil-a371/doctorto#readme",
+  "homepage": "https://github.com/Soheil-a371/asatab#readme",
   "dependencies": {
     "next": "^16.3.3"
   }
