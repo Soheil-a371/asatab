@@ -1,8 +1,10 @@
 import { ReactElement } from "react";
 
-import styles from "./page.module.css";
 import MyDoctorLogo from "@/logo/my-doctor.logo";
+
 import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
+
+import styles from "./page.module.css";
 
 export default function Home(): ReactElement {
   return (
