@@ -1,12 +1,12 @@
 "use client";
 
-import { ReactElement, useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import { FiltersContext } from "../../provider/filters/filters.provider";
 
 import RadioFilterComponent from "../radio-filter/radio-filter.component";
 
-export default function GenderFilterComponent(): ReactElement {
+export default function GenderFilterComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const changeHandler = (value: string) => {

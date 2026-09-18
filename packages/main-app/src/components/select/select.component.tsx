@@ -1,5 +1,5 @@
 import {
-  ReactElement,
+  ReactNode,
   useCallback,
   useEffect,
   useRef,
@@ -9,7 +9,6 @@ import {
 } from "react";
 
 import clsx from "clsx";
-
 
 import styles from "./select.module.css";
 import { SelectOptionType } from "@/types/select.option.type";
@@ -32,7 +31,7 @@ export default function SelectComponent({
   selectedOption,
   onSelectedOptionChange,
   onIsOpenChange,
-}: Props): ReactElement {
+}: Props): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
 

@@ -1,13 +1,10 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
 
 import { doctors } from "@/mocks/doctors";
 
-
 import { filtersTypes } from "@/types/filters.type";
-
-
 
 import AppointmentFilterComponent from "./components/appointment-filter/appointment-filter.component";
 import DegreeFilterComponent from "./components/degree-filter/degree-filter.component";
@@ -31,7 +28,7 @@ type Props = {
 
 export default async function Page({
   searchParams,
-}: Props): Promise<ReactElement> {
+}: Props): Promise<ReactNode> {
   const defaultFilters = generateDefaultFilters(await searchParams);
 
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, useContext } from "react";
+import { ReactNode, useContext } from "react";
 import styles from "./expertise-filter.module.css";
 import { FiltersContext } from "../../provider/filters/filters.provider";
 import CardComponent from "@/components/card/card.component";
@@ -43,7 +43,7 @@ const options: string[] = [
   "تصویربرداری",
 ];
 
-export default function ExpertiseFilterComponent(): ReactElement {
+export default function ExpertiseFilterComponent(): ReactNode {
   const { dispatchFilters } = useContext(FiltersContext);
 
   const buttonClickHandler = (value: string) => {

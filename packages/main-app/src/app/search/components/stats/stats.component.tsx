@@ -1,12 +1,12 @@
 "use client";
 
-import { ReactElement, useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import { DoctorsContext } from "../../provider/doctors/doctors.provider";
 
 import styles from "./stats.module.css";
 
-export default function StatsComponent(): ReactElement {
+export default function StatsComponent(): ReactNode {
   const { filteredDoctors } = useContext(DoctorsContext);
 
   return (

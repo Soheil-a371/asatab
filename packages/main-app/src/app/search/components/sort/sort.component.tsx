@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, useState } from "react";
+import { ReactNode, useState } from "react";
 
 import { SelectOptionType } from "@/types/select.option.type";
 import SelectComponent from "@/components/select/select.component";
@@ -13,11 +13,11 @@ const options: SelectOptionType[] = [
   { value: "view", label: "پربازدیدترین" },
 ];
 
-export default function SortComponent(): ReactElement {
+export default function SortComponent(): ReactNode {
   const [selectedOption, setSelectedOption] = useState<SelectOptionType>(
     options[0],
   );
-  
+
   return (
     <SelectComponent
       floating

@@ -3,7 +3,7 @@
 import {
   createContext,
   PropsWithChildren,
-  ReactElement,
+  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -30,7 +30,7 @@ type Props = PropsWithChildren & {
 export default function DoctorsProvider({
   children,
   doctors,
-}: Props): ReactElement {
+}: Props): ReactNode {
   const { filters } = useContext(FiltersContext);
 
   //   const [filteredDoctors, setFilteredDoctors] = useState<DoctorModel[]>([])
@@ -49,7 +49,6 @@ export default function DoctorsProvider({
   //   useEffect(() => {
   //     setFilteredDoctors(doctors.filter(isVisible));
   //   }, [isVisible, doctors]);
-
 
   const filteredDoctors = useMemo(() => {
     return doctors.filter(isVisible);

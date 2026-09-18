@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, ReactElement } from "react";
+import { ChangeEvent, ReactNode } from "react";
 
 import CardComponent from "@/components/card/card.component";
 
@@ -22,7 +22,7 @@ export default function RadioFilterComponent({
   options,
   value,
   onChange,
-}: Props): ReactElement {
+}: Props): ReactNode {
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
     onChange?.(e.currentTarget.value);
   };

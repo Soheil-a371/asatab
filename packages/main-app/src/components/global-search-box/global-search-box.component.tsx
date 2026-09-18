@@ -1,24 +1,16 @@
 "use client";
 
-import {
-  FormEvent,
-  ReactElement,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { FormEvent, ReactNode, useContext, useEffect, useState } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 
 import MingcuteSearchLine from "@/icons/MingcuteSearchLine";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 
-
-
 import styles from "./global-search-box.module.css";
 import { FiltersContext } from "@/app/search/provider/filters/filters.provider";
 
-export default function GlobalSearchBoxComponent(): ReactElement {
+export default function GlobalSearchBoxComponent(): ReactNode {
   const router = useRouter();
   const pathname = usePathname();
 

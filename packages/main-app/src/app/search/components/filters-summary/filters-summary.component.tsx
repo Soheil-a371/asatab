@@ -1,12 +1,12 @@
 "use client";
-import { ReactElement, useContext, useMemo } from "react";
+import { ReactNode, useContext, useMemo } from "react";
 import { FiltersContext } from "../../provider/filters/filters.provider";
 import { filtersTypes } from "@/types/filters.type";
 import CardComponent from "@/components/card/card.component";
 
 import styles from "./filters-summary.module.css";
 
-export default function FiltersSummaryComponent(): ReactElement | null {
+export default function FiltersSummaryComponent(): ReactNode  {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const isEmpty = useMemo(() => {

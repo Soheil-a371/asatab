@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 import MyDoctorLogo from "@/logo/my-doctor.logo";
 
@@ -6,12 +6,12 @@ import GlobalSearchBoxComponent from "@/components/global-search-box/global-sear
 
 import styles from "./page.module.css";
 
-export default function Home(): ReactElement {
+export default function Home(): ReactNode {
   return (
     <div className={styles.home}>
       <h1>
         <MyDoctorLogo />
-        دکتر من 
+        دکتر من
       </h1>
       <GlobalSearchBoxComponent />
       <div className={styles.history}>

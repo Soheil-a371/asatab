@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,7 +20,7 @@ const navItems: NavItem[] = [
   { id: 2, href: "/search", content: "جستجو" },
 ];
 
-export default function HeaderComponent(): ReactElement {
+export default function HeaderComponent(): ReactNode {
   const pathname = usePathname();
   return (
     <header className={styles.header}>

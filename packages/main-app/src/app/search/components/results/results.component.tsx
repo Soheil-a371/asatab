@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +12,7 @@ import { DoctorsContext } from "../../provider/doctors/doctors.provider";
 
 import styles from "./results.module.css";
 
-export default function ResultsComponent(): ReactElement {
+export default function ResultsComponent(): ReactNode {
   const { filteredDoctors } = useContext(DoctorsContext);
 
   return (

@@ -4,15 +4,13 @@ import {
   createContext,
   Dispatch,
   PropsWithChildren,
-  ReactElement,
+  ReactNode,
   useReducer,
 } from "react";
 
 import filtersReducer, { FilterAction } from "../../reducers/filters.reducer";
 
 import { filtersTypes } from "@/types/filters.type";
-
-
 
 type Value = {
   filters: filtersTypes;
@@ -31,7 +29,7 @@ type Props = PropsWithChildren & {
 export default function FiltersProvider({
   children,
   defaultFilters,
-}: Props): ReactElement {
+}: Props): ReactNode {
   const [filters, dispatchFilters] = useReducer(filtersReducer, defaultFilters);
 
   return (

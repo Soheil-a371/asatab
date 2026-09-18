@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 import Image from "next/image";
 
@@ -13,7 +13,7 @@ type ErrorProps = {
   reset: () => void;
 };
 
-export default function Error({ error, reset }: ErrorProps): ReactElement {
+export default function Error({ error, reset }: ErrorProps): ReactNode {
   return (
     <div className={styles["error"]}>
       <div className={styles.writing}>

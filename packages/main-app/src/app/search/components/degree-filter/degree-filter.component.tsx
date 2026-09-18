@@ -1,13 +1,12 @@
 "use client";
 
-import { ReactElement, useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import RadioFilterComponent from "@/app/search/components/radio-filter/radio-filter.component";
 
 import { FiltersContext } from "../../provider/filters/filters.provider";
 
-
-export default function DegreeFilterComponent(): ReactElement {
+export default function DegreeFilterComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const changeHandler = (value: string): void => {

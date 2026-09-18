@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ import MingcuteYoutubeFill from "@/icons/MingcuteYoutubeFill";
 
 import styles from "./footer.module.css";
 
-export default function FooterComponent(): ReactElement {
+export default function FooterComponent(): ReactNode {
   return (
     <footer className={styles.footer}>
       <div className={styles.writings}>

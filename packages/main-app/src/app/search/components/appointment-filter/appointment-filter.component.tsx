@@ -1,9 +1,9 @@
 "use client";
 
-import { ReactElement, useState } from "react";
+import { ReactNode, useState } from "react";
 
 import SelectComponent from "@/components/select/select.component";
-    
+
 import { SelectOptionType } from "@/types/select.option.type";
 
 const options: SelectOptionType[] = [
@@ -15,7 +15,7 @@ const options: SelectOptionType[] = [
   { value: "inSevenDays", label: "تا هفت روز" },
 ];
 
-export default function AppointmentFilterComponent(): ReactElement {
+export default function AppointmentFilterComponent(): ReactNode {
   const [selectedOption, setSelectedOption] = useState<SelectOptionType>(
     options[0],
   );
