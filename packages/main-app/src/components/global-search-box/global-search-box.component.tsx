@@ -7,8 +7,9 @@ import { usePathname, useRouter } from "next/navigation";
 import MingcuteSearchLine from "@/icons/MingcuteSearchLine";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 
-import styles from "./global-search-box.module.css";
 import { FiltersContext } from "@/app/search/provider/filters/filters.provider";
+
+import styles from "./global-search-box.module.css";
 
 export default function GlobalSearchBoxComponent(): ReactNode {
   const router = useRouter();
@@ -16,7 +17,7 @@ export default function GlobalSearchBoxComponent(): ReactNode {
 
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
-  const [query, setQuery] = useState<string>("");
+  const [query, setQuery] = useState<string>(filters.query || "");
 
   const formSubmitHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -35,22 +36,10 @@ export default function GlobalSearchBoxComponent(): ReactNode {
         });
       }
     } else {
-      const href = query ? `/search/?query=${query}` : "/search";
+      const href = query ? `/search/?query=${encodeURIComponent(query)}` : "/search";
       router.push(href);
     }
   };
-
-  useEffect(() => {
-    if (pathname !== "/search") {
-      return;
-    }
-
-    const filterQuery = filters.query || "";
-    setQuery(filterQuery);
-
-    const href = filterQuery ? `/search/?query=${filterQuery}` : "/search";
-    router.replace(href);
-  }, [filters, pathname, router]);
 
   return (
     <form className={styles["global-search-box"]} onSubmit={formSubmitHandler}>
