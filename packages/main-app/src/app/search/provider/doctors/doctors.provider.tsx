@@ -6,9 +6,7 @@ import {
   ReactNode,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useState,
 } from "react";
 
 import { DoctorModel } from "@/models/doctor.model";
@@ -33,7 +31,6 @@ export default function DoctorsProvider({
 }: Props): ReactNode {
   const { filters } = useContext(FiltersContext);
 
-  //   const [filteredDoctors, setFilteredDoctors] = useState<DoctorModel[]>([])
   const isVisible = useCallback(
     (doctor: DoctorModel): boolean => {
       return (
@@ -45,10 +42,6 @@ export default function DoctorsProvider({
     },
     [filters],
   );
-
-  //   useEffect(() => {
-  //     setFilteredDoctors(doctors.filter(isVisible));
-  //   }, [isVisible, doctors]);
 
   const filteredDoctors = useMemo(() => {
     return doctors.filter(isVisible);

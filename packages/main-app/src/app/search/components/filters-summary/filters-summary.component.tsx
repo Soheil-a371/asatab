@@ -6,14 +6,15 @@ import CardComponent from "@/components/card/card.component";
 
 import styles from "./filters-summary.module.css";
 
-export default function FiltersSummaryComponent(): ReactNode  {
+export default function FiltersSummaryComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
-  const isEmpty = useMemo(() => {
-    return (
-      !filters.query && !filters.expertise && !filters.gender && !filters.degree
-    );
-  }, [filters]);
+  const activeFilters = [
+    { key: "query", value: filters.query },
+    { key: "expertise", value: filters.expertise },
+    { key: "gender", value: filters.gender },
+    { key: "degree", value: filters.degree },
+  ].filter(({ value }) => value);
 
   const removeAllButtonClickHandler = (): void => {
     dispatchFilters({ type: "removed_all" });
@@ -23,7 +24,7 @@ export default function FiltersSummaryComponent(): ReactNode  {
     dispatchFilters({ type: "removed_filter", key });
   };
 
-  if (isEmpty) {
+  if (activeFilters.length === 0) {
     return null;
   }
 
@@ -37,24 +38,14 @@ export default function FiltersSummaryComponent(): ReactNode  {
         </button>
 
         <ul className={styles.filters}>
-          {filters.query && (
-            <li onClick={() => filterClickHandler("query")}>{filters.query}</li>
-          )}
-          {filters.expertise && (
-            <li onClick={() => filterClickHandler("expertise")}>
-              {filters.expertise}
+          {activeFilters.map(({ key, value }) => (
+            <li
+              key={key}
+              onClick={() => filterClickHandler(key as keyof filtersTypes)}
+            >
+              {value}
             </li>
-          )}
-          {filters.gender && (
-            <li onClick={() => filterClickHandler("gender")}>
-              {filters.gender}
-            </li>
-          )}
-          {filters.degree && (
-            <li onClick={() => filterClickHandler("degree")}>
-              {filters.degree}
-            </li>
-          )}
+          ))}
         </ul>
       </div>
     </CardComponent>

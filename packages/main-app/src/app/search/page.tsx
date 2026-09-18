@@ -38,6 +38,7 @@ export default async function Page({
           <div className={styles.search}>
             <GlobalSearchBoxComponent />
           </div>
+
           <div className={styles.filters}>
             <FiltersSummaryComponent />
             <ExpertiseFilterComponent />
@@ -51,6 +52,7 @@ export default async function Page({
               <StatsComponent />
             </div>
           </div>
+          
           <div className={styles.results}>
             <ResultsComponent />
           </div>
