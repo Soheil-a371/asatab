@@ -18,8 +18,8 @@ export default function GenderFilterComponent(): ReactNode {
       title={"جنسیت پزشک"}
       name={"gender"}
       options={[
-        { value: "آقا", label: "آقا" },
-        { value: "خانم", label: "خانم" },
+        { value: "male", label: "آقا" },
+        { value: "female", label: "خانم" },
       ]}
       value={filters.gender}
       onChange={changeHandler}

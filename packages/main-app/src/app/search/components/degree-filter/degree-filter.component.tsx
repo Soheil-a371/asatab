@@ -18,13 +18,13 @@ export default function DegreeFilterComponent(): ReactNode {
       title="درجه علمی"
       name="degree"
       options={[
-        { value: "فلوشیپ", label: "فلوشیپ" },
-        { value: "فوق تخصص", label: "فوق تخصص" },
-        { value: "دکترای تخصصی", label: "دکترای تخصصی" },
-        { value: "متخصص", label: "متخصص" },
-        { value: "دکتری", label: "دکتری" },
-        { value: "کارشناس ارشد", label: "کارشناس ارشد" },
-        { value: "کارشناس", label: "کارشناس" },
+        { value: "fellowship", label: "فلوشیپ" },
+        { value: "subspecialty", label: "فوق تخصص" },
+        { value: "specialty_phd", label: "دکترای تخصصی" },
+        { value: "specialist", label: "متخصص" },
+        { value: "phd", label: "دکتری" },
+        { value: "master", label: "کارشناس ارشد" },
+        { value: "bachelor", label: "کارشناس" },
       ]}
       value={filters.degree}
       onChange={changeHandler}
