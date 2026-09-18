@@ -5,6 +5,7 @@ import MyDoctorLogo from "@/logo/my-doctor.logo";
 import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
 
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home(): ReactNode {
   return (
@@ -17,8 +18,12 @@ export default function Home(): ReactNode {
       <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>
-          <li>ارتوپد</li>
-          <li>قلب و عروق</li>
+          <li>
+            <Link href={"./search/?query=ارتوپد"}>ارتوپد</Link>
+          </li>
+          <li>
+            <Link href={"./search/?query=قلب و عروق"}>قلب و عروق</Link>
+          </li>
         </ul>
       </div>
     </div>
