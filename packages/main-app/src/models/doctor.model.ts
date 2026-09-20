@@ -12,4 +12,5 @@ export type DoctorModel = {
   degree: string;
   expertise: string;
   badges: string[];
+  about:string
 };

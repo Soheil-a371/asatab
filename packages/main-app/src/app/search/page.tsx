@@ -39,12 +39,12 @@ export default async function Page({
             <GlobalSearchBoxComponent />
           </div>
 
-          <div className={styles.filters}>
+          <aside className={styles.filters}>
             <FiltersSummaryComponent />
             <ExpertiseFilterComponent />
             <GenderFilterComponent />
             <DegreeFilterComponent />
-          </div>
+          </aside>
           <div className={styles.toolbar}>
             <SortComponent />
             <AppointmentFilterComponent />

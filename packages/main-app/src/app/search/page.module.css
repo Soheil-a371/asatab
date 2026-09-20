@@ -15,6 +15,10 @@
   .filters {
     grid-area: filters;
 
+    position: sticky;
+    top: 2rem; /* ← این خط لازمه */
+    align-self: start;
+
     display: grid;
     gap: 1rem;
   }
