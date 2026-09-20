@@ -5,10 +5,8 @@ const nextConfig: NextConfig = {
    images: {
     remotePatterns: [
       {
-        protocol: 'https',
         hostname: 'cdn.paziresh24.com',
-        port: '',
-        pathname: '/**',
+        protocol: 'https',
       },
     ],
   },

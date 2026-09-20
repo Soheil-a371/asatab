@@ -22,6 +22,7 @@
   --color-primary: hsl(200deg 90% 46%);
   --color-primary-fade: hsl(200deg 90% 96%);
   --color-primary-lighter: hsl(200deg 90% 50%);
+  --color-primary-lightest: hsl(200, 80%, 81%);
   --color-primary-darker: hsl(200deg 90% 42%);
   --color-primary-opposite: var(--color-gray-99);
 

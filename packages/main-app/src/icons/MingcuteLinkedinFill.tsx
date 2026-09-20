@@ -20,3 +20,6 @@ export function MingcuteLinkedinFill(props: SVGProps<SVGSVGElement>) {
   );
 }
 export default MingcuteLinkedinFill;
+
+
+
