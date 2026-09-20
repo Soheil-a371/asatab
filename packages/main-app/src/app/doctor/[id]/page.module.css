@@ -94,7 +94,14 @@
     }
 
     .about {
+      margin-top: 0.5rem;
       white-space: pre-line;
+
+      > p {
+        padding: 0.5rem;
+        font-weight: 700;
+        color: black;
+      }
     }
   }
 
