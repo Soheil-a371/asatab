@@ -44,8 +44,8 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
               <Image
                 src={`https://cdn.paziresh24.com${doctor.image}`}
                 alt={doctor.name}
-                width={120}
-                height={120}
+                width={100}
+                height={100}
                 className={styles.avatar}
               />
 
