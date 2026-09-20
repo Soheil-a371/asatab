@@ -99,6 +99,8 @@
 
     .details {
       border-right: 2px solid var(--color-surface-300);
+      margin-block-end: 1rem;
+      padding: 0.5rem;
     }
     .visit-online {
       .visit-header {
@@ -133,10 +135,10 @@
         .tittle {
         }
 
-        .contact{
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+        .contact {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
         }
       }
     }

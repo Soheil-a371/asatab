@@ -102,15 +102,15 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
         </div>
 
         <div className={styles.person}>
-          <CardComponent>
+          <CardComponent >
             <div className={styles["person-header"]}>
               <IconButton>نوبت اینترنتی و مراجعه حضوری</IconButton>
             </div>
 
             <div className={styles.details}>
               امکان دریافت زودترین نوبت
-              <VisitButton>دریافت نوبت</VisitButton>
             </div>
+              <VisitButton>دریافت نوبت</VisitButton>
           </CardComponent>
         </div>
 
