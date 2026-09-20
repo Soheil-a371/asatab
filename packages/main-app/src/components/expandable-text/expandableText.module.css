@@ -19,7 +19,7 @@
   padding: 0.4rem 0.9rem;
   border-radius: 999rem;
 
-  color: #4a6dff;
+  color: var(--color-primary-lighter);
   font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
@@ -28,5 +28,5 @@
 }
 
 .toggle:hover {
-  background-color: rgba(74, 109, 255, 0.1);
+  background-color: var(--color-primary-lightest);
 }
