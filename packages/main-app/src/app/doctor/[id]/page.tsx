@@ -5,12 +5,14 @@ import Image from "next/image";
 
 import { doctors } from "@/mocks/doctors";
 import CardComponent from "@/components/card/card.component";
-
 import IconButton from "@/components/buttons/iconButton/iconButton.component";
-
-import styles from "./page.module.css";
 import VisitButton from "@/components/buttons/visitButton/visitButton.component";
 import ExpandableText from "@/components/expandable-text/expandableText.component";
+import Specialties from "@/components/specialties/specialties.component";
+
+import styles from "./page.module.css";
+import ReviewsRatingComponent from "@/components/reviews-rating/reviewsRating.component";
+import ReviewsComponent from "@/components/reviews/reviews.component";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -24,7 +26,23 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
     notFound();
   }
 
-  console.log(doctor);
+  const votes = doctor.totalVotes.toLocaleString("fa-IR");
+  const hasAvailability = Boolean(doctor.firstAvailableAppointment);
+
+  const contactActions = [
+    {
+      label: "برنامه کاری",
+      href: `/doctors/${doctor.id}/schedule`,
+    },
+    {
+      label: "۰۹۱۲۱۱۱۱۱۱",
+      href: "tel:0912111111",
+    },
+    {
+      label: "مشاهده در نشان",
+      href: `https://neshan.org/maps/search/${encodeURIComponent(doctor.address)}`,
+    },
+  ];
 
   return (
     <div className={styles.container}>
@@ -51,39 +69,24 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
 
               <div className={styles.info}>
                 <h2 className={styles.name}>{doctor.name}</h2>
-                <ul className={styles.specialties}>
-                  {doctor.brief
-                    .split(/[،_\.]/)
-                    .map((s) => s.trim())
-                    .filter(Boolean)
-                    .map((s, index) => (
-                      <li key={`${s}-${index}`} className={styles.chip}>
-                        {s}
-                      </li>
-                    ))}
-                </ul>
+                <Specialties value={doctor.brief} />
               </div>
             </div>
 
-            <div className={styles.rating}>
-              <div className={styles["rating-box"]}>
-                <span className={styles.score}>{doctor.averageRating}</span>
-                <span className={styles.outOf}> از 5</span>
-              </div>
-
-              <span className={styles.satisfaction}>
-                رضایت ({doctor.totalVotes.toLocaleString("fa-IR")} نظر)
-              </span>
-            </div>
+            <ReviewsRatingComponent doctor={doctor} />
           </CardComponent>
         </div>
 
         <div className={styles.about}>
-          <p>درباره من</p>
+          <h3 className={styles.title}>درباره من</h3>
           <CardComponent>
             <ExpandableText>{doctor.about}</ExpandableText>
           </CardComponent>
         </div>
+
+        
+          <ReviewsComponent doctor={doctor} />
+        
       </div>
 
       <div className={styles["visit-panel"]}>
@@ -91,7 +94,7 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
           <CardComponent>
             <div className={styles["visit-header"]}>
               <IconButton>آنلاین ویزیت شوید</IconButton>
-              <span>600,000 تومان</span>
+              <span>۶۰۰,۰۰۰ تومان</span>
             </div>
 
             <div className={styles["services-box"]}>
@@ -101,15 +104,17 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
               </div>
 
               <div className={styles["visit-status"]}>
-                {doctor.firstAvailableAppointment === ""
-                  ? "امکان برقراری تماس با این پزشک وجود ندارد."
-                  : "امکان برقراری تماس با این پزشک وجود دارد."}
+                {hasAvailability
+                  ? "امکان برقراری تماس با این پزشک وجود دارد."
+                  : "امکان برقراری تماس با این پزشک وجود ندارد."}
               </div>
 
               <span>تا ۳ روز می‌توانید هر سوالی دارید از پزشک بپرسید</span>
             </div>
 
-            <VisitButton>شروع ویزیت آنلاین حدود ساعت 21:45 شب امشب</VisitButton>
+            <VisitButton href={`/doctors/${doctor.id}/online-visit`}>
+              شروع ویزیت آنلاین حدود ساعت ۲۱:۴۵ شب امشب
+            </VisitButton>
           </CardComponent>
         </div>
 
@@ -120,20 +125,29 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
             </div>
 
             <div className={styles.details}>امکان دریافت زودترین نوبت</div>
-            <VisitButton>دریافت نوبت</VisitButton>
+            <VisitButton href={`/doctors/${doctor.id}/booking`}>
+              دریافت نوبت
+            </VisitButton>
           </CardComponent>
         </div>
 
         <div className={styles.address}>
-          آدرس و تلفن تماس
+          <h3 className={styles.title}>آدرس و تلفن تماس</h3>
           <CardComponent>
             <div className={styles["address-box"]}>
               <p className={styles.title}>مطب {doctor.name}</p>
               <span>{doctor.address}</span>
+
               <div className={styles.contact}>
-                <VisitButton variant="outline">برنامه کاری </VisitButton>
-                <VisitButton variant="outline">0912111111</VisitButton>
-                <VisitButton variant="outline">مشاهده در نقشه یابی</VisitButton>
+                {contactActions.map((action) => (
+                  <VisitButton
+                    key={action.label}
+                    variant="outline"
+                    href={action.href}
+                  >
+                    {action.label}
+                  </VisitButton>
+                ))}
               </div>
             </div>
           </CardComponent>
