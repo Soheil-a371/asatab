@@ -86,7 +86,7 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
 
         
           <ReviewsComponent doctor={doctor} />
-        
+          
       </div>
 
       <div className={styles["visit-panel"]}>

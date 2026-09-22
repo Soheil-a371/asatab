@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import MyDoctorLogo from "@/logo/my-doctor.logo";
 
-import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
+import GlobalSearchBoxComponent from "@/components/searchs/global-search-box/global-search-box.component";
 
 import styles from "./page.module.css";
 import Link from "next/link";

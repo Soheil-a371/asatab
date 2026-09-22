@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import notFoundImage from "@/assets/illustrations/not-found.svg";
 
-import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
+import GlobalSearchBoxComponent from "@/components/searchs/global-search-box/global-search-box.component";
 
 import styles from "./not-found.module.css";
 

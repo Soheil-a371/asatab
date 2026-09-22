@@ -4,12 +4,13 @@ import { ReactNode } from "react";
 
 import { DoctorModel } from "@/models/doctor.model";
 
+import CardComponent from "../card/card.component";
 import RatingBar from "../ratingBar/ratingBar.component";
-
 import ReviewsRatingComponent from "../reviews-rating/reviewsRating.component";
+import SortComponent from "@/app/search/components/sort/sort.component";
 
 import styles from "./reviews.module.css";
-import CardComponent from "../card/card.component";
+import CommentSearchComponent from "../searchs/commentSearch/commentSearch.component";
 
 type Props = {
   doctor: DoctorModel;
@@ -45,6 +46,11 @@ export default function ReviewsComponent({
               ))}
           </div>
         </div>
+        <div className={styles.filters}>
+          <SortComponent />
+          <SortComponent />
+        </div>
+          <CommentSearchComponent/>
       </CardComponent>
     </div>
   );

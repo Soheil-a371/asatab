@@ -16,4 +16,11 @@
       gap: 1.5rem;
     }
   }
+
+  .filters{
+    display: flex;
+    justify-content: space-around;
+    margin-block-start: 1rem;
+
+  }
 }

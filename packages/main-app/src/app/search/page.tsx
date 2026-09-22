@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
+import GlobalSearchBoxComponent from "@/components/searchs/global-search-box/global-search-box.component";
 
 import { doctors } from "@/mocks/doctors";
 

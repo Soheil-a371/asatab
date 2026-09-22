@@ -36,7 +36,9 @@ export default function GlobalSearchBoxComponent(): ReactNode {
         });
       }
     } else {
-      const href = query ? `/search/?query=${encodeURIComponent(query)}` : "/search";
+      const href = query
+        ? `/search/?query=${encodeURIComponent(query)}`
+        : "/search";
       router.push(href);
     }
   };
