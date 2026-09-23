@@ -44,7 +44,7 @@
     .rating {
       grid-area: rating;
 
-      background-color: var(--color-star);
+      background-color: var(--color-primary);
 
       display: flex;
       align-items: baseline;

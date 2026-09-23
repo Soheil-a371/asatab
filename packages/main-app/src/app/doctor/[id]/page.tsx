@@ -14,7 +14,7 @@ import VisitBarComponent from "./visitBar/visitBar.component";
 import { getDoctor } from "@/utils/getDoctor";
 
 import styles from "./page.module.css";
-import MingcuteBookmarkLine from "@/icons/MingcuteBookmarkLine";
+
 
 type Props = {
   params: Promise<{ id: string }>;

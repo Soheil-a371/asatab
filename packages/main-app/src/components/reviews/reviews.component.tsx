@@ -11,10 +11,12 @@ import SortComponent from "@/app/search/components/sort/sort.component";
 
 import styles from "./reviews.module.css";
 import CommentSearchComponent from "../searchs/commentSearch/commentSearch.component";
+import CommentComponent from "../comment/comment.component";
+import { CommentModel } from "@/models/comment.model";
+import { DetailedDoctorModel } from "@/models/detailed-doctor.model";
 
 type Props = {
-  doctor: DoctorModel;
-  comments?: string[];
+  doctor: DetailedDoctorModel;
 };
 
 const rating = [
@@ -24,10 +26,7 @@ const rating = [
   { rating: 3, title: "فرآیند پذیرش و رفتار منشی" },
 ];
 
-export default function ReviewsComponent({
-  doctor,
-  comments,
-}: Props): ReactNode {
+export default function ReviewsComponent({ doctor }: Props): ReactNode {
   return (
     <div className={styles.wrapper}>
       <CardComponent>
@@ -50,7 +49,10 @@ export default function ReviewsComponent({
           <SortComponent />
           <SortComponent />
         </div>
-          <CommentSearchComponent/>
+        <CommentSearchComponent />
+        {doctor.comments.map((comment:CommentModel) => (
+          <CommentComponent key={comment.id} comment={comment} />
+        ))}
       </CardComponent>
     </div>
   );
