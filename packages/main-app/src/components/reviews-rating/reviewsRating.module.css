@@ -1,36 +1,25 @@
 .rating {
+  grid-area: rating;
+  background-color: var(--color-star);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
-  .rating-box {
-    display: inline-flex;
-    align-items: baseline;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999rem;
 
-    color: white;
-    background-color: var(--color-primary-lighter);
-    gap: 3px;
-    padding: 4px 8px;
-    border-radius: 999rem;
-    text-align: center;
+  
+  justify-self: center;   
+  align-self: center;    
+  width: fit-content;    
 
-    & > span {
-      font-weight: 500;
-      font-size: 0.8rem;
-    }
-
-    .score {
-      height: auto;
-      max-width: 100%;
-    }
-
-    .outOf {
-      width: 100%;
-      min-width: 0;
-    }
+  .average-rating {
+    font-weight: 700;
   }
 
-  .satisfaction {
+  .total-votes {
+    font-size: var(--fz-300);
   }
 }

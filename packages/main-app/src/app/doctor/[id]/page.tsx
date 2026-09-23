@@ -1,18 +1,17 @@
 import { ReactNode } from "react";
 
 import { notFound } from "next/navigation";
-import Image from "next/image";
 
 import { doctors } from "@/mocks/doctors";
 import CardComponent from "@/components/card/card.component";
 import IconButton from "@/components/buttons/iconButton/iconButton.component";
 import VisitButton from "@/components/buttons/visitButton/visitButton.component";
 import ExpandableText from "@/components/expandable-text/expandableText.component";
-import Specialties from "@/components/specialties/specialties.component";
 
 import styles from "./page.module.css";
-import ReviewsRatingComponent from "@/components/reviews-rating/reviewsRating.component";
+
 import ReviewsComponent from "@/components/reviews/reviews.component";
+import ProfileComponent from "./components/doctorProfile/profile.component";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -25,8 +24,6 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
   if (!doctor) {
     notFound();
   }
-
-  const votes = doctor.totalVotes.toLocaleString("fa-IR");
   const hasAvailability = Boolean(doctor.firstAvailableAppointment);
 
   const contactActions = [
@@ -58,22 +55,7 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
               </div>
             </div>
 
-            <div className={styles.profile}>
-              <Image
-                src={`https://cdn.paziresh24.com${doctor.image}`}
-                alt={doctor.name}
-                width={100}
-                height={100}
-                className={styles.avatar}
-              />
-
-              <div className={styles.info}>
-                <h2 className={styles.name}>{doctor.name}</h2>
-                <Specialties value={doctor.brief} />
-              </div>
-            </div>
-
-            <ReviewsRatingComponent doctor={doctor} />
+            <ProfileComponent doctor={doctor} />
           </CardComponent>
         </div>
 
@@ -84,9 +66,7 @@ export default async function Page({ params }: Props): Promise<ReactNode> {
           </CardComponent>
         </div>
 
-        
-          <ReviewsComponent doctor={doctor} />
-          
+        <ReviewsComponent doctor={doctor} />
       </div>
 
       <div className={styles["visit-panel"]}>

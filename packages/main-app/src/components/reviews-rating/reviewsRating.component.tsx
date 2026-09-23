@@ -8,16 +8,15 @@ type Props = {
   doctor: DoctorModel;
 };
 
-export default function ReviewsRatingComponent({ doctor }: Props):ReactNode {
-  const votes = doctor.totalVotes.toLocaleString("fa-IR");
+export default function ReviewsRatingComponent({ doctor }: Props): ReactNode {
   return (
     <div className={styles.rating}>
-      <div className={styles["rating-box"]}>
-        <span className={styles.score}>{doctor.averageRating}</span>
-        <span className={styles.outOf}> از ۵</span>
-      </div>
-
-      <span className={styles.satisfaction}>رضایت ({votes} نظر)</span>
+      <span className={styles["average-rating"]}>
+        {Math.floor(doctor.averageRating * 10) / 10} از 5
+      </span>
+      <span className={styles["total-votes"]}>
+        ({doctor.totalVotes.toLocaleString()} نظر)
+      </span>
     </div>
   );
 }
