@@ -1,0 +1,62 @@
+.visit-online {
+  .visit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.5rem;
+    align-items: center; /* ✅ برای هم‌ترازی دایره با متن */
+
+    .indicator {
+      background-color: var(--color-online-indicator-fade);
+      position: relative;
+      inline-size: 1em;
+      block-size: 1em;
+      border-radius: 999rem;
+      font-size: var(--fz-500);
+
+      &::after {
+        content: "";
+        background-color: var(--color-online-indicator);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        inline-size: 0.5em;
+        block-size: 0.5em;
+        border-radius: 999rem;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .title {
+      font-size: var(--fz-300);
+    }
+  }
+
+  .services-box {
+    display: flex;
+    flex-direction: column;
+
+    margin-block: 1rem;
+    padding-inline-start: 5px;
+    
+
+    gap: 0.75rem;
+    border-right: 2px solid var(--color-surface-300);
+
+    .services-base {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .visit-status {
+      color: var(--color-primary-darker);
+      font-weight: 600;
+    }
+  }
+}

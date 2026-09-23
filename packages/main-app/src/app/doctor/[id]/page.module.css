@@ -5,28 +5,11 @@
   gap: 1.5rem;
 
   .doctor-panel {
-    .image {
-      .card-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .actions {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-      }
-
-      
-
-    }
-
     .about {
       margin-top: 0.5rem;
       white-space: pre-line;
 
-      >p{
+      > p {
         padding: 0.5rem;
         font-weight: 700;
         color: black;
@@ -43,46 +26,6 @@
       border-right: 2px solid var(--color-surface-300);
       margin-block-end: 1rem;
       padding: 0.5rem;
-    }
-    .visit-online {
-      .visit-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .services-box {
-        padding: 5px;
-        margin-bottom: 1rem;
-        border-right: 2px solid var(--color-surface-300); /* ← این خط اضافه شد */
-
-        .services-base {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .visit-status {
-          color: var(--color-primary-darker);
-          font-weight: 600;
-        }
-      }
-    }
-
-    .address {
-      .address-box {
-        background-color: var(--color-surface-300);
-        border-radius: 0.25rem;
-        padding: 0.5rem;
-
-        .tittle {
-        }
-
-        .contact {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-      }
     }
   }
 }
